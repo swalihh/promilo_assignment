@@ -1,24 +1,21 @@
 import 'package:flutter/material.dart';
-
+import 'package:promilo/resources/constants/colors.dart';
+import 'package:promilo/resources/constants/style.dart';
 
 class SignUpTextField extends StatelessWidget {
   final TextEditingController? controller;
-  final Icon? prefixIcon;
   final String? hintText;
   final String? Function(String?)? validator;
   final String? label;
+  final String? labeltwo;
   final TextStyle? labelStyle;
   final TextStyle? hintStyle;
   final bool obscureText;
   final TextInputType keyboardType;
-  final int? maxLines;
-  final int? maxLength;
-  final bool readOnly;
 
   const SignUpTextField({
     Key? key,
     this.controller,
-    this.prefixIcon,
     this.hintText,
     this.validator,
     this.label,
@@ -26,9 +23,7 @@ class SignUpTextField extends StatelessWidget {
     this.hintStyle,
     this.obscureText = false,
     this.keyboardType = TextInputType.text,
-    this.maxLines,
-    this.maxLength,
-    this.readOnly = false,
+    this.labeltwo,
   }) : super(key: key);
 
   @override
@@ -42,32 +37,47 @@ class SignUpTextField extends StatelessWidget {
             style: labelStyle,
           ),
         TextFormField(
-          enabled: !readOnly,
-          readOnly: readOnly,
           autovalidateMode: AutovalidateMode.onUserInteraction,
           controller: controller,
           obscureText: obscureText,
           keyboardType: keyboardType,
-         // style: AppText.labeltext,
+          // style: AppText.labeltext,
           decoration: InputDecoration(
-            contentPadding: const EdgeInsets.symmetric(vertical: 12, horizontal: 12),
-            filled: true,
-         //   fillColor: AppColors.backgroundColor,
-            prefixIcon: prefixIcon,
+          
+            contentPadding:
+                const EdgeInsets.symmetric(vertical: 12, horizontal: 12),
+
+            //   fillColor: AppColors.backgroundColor,
             hintText: hintText,
             hintStyle: hintStyle,
-            labelStyle: const TextStyle(color: Colors.white),
+            labelStyle: const TextStyle(color: AppColors.labelcolor),
             focusedBorder: const OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.white, width: 2.0),
-          
+              borderSide:
+                  BorderSide(color: Color.fromARGB(255, 0, 0, 0), width: 1.0),
             ),
             enabledBorder: const OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.transparent, width: 2.0),
-             
+              borderSide:
+                  BorderSide(color: Color.fromARGB(255, 0, 0, 0), width: 1.0),
             ),
           ),
           validator: validator,
         ),
+        const SizedBox(
+          height: 5,
+        ),
+        Padding(
+          padding: const EdgeInsets.only(right: 10),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+             
+              Text(
+                labeltwo??'',
+                style: Apptext.secondlabel,
+              ),
+            ],
+          ),
+        )
       ],
     );
   }
