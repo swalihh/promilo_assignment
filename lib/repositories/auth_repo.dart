@@ -1,15 +1,11 @@
+import 'package:promilo/data/network/network_service.dart';
+import 'package:promilo/resources/app_urls/urls.dart';
+import 'package:promilo/utils/typedef.dart';
 
-// import 'package:http/http.dart' as http;
+class AuthRepo {
+  final network = NetworkService();
 
-// class AuthRepo{
-   
-
-// Future <Map<String,dynamic>>post(http.Response response){
-// if (response.statuscode==200) {
-  
-// }
-// }
-// }
-
-
-
+  EitherResponce loginUser(Map<String, dynamic> body) async {
+    return await network.post(AppUrl.loginUrl, body);
+  }
+}

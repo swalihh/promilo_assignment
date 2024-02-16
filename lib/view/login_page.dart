@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:http/http.dart';
+import 'package:promilo/bloc/bloc/login_bloc.dart';
 import 'package:promilo/resources/constants/colors.dart';
 import 'package:promilo/resources/constants/style.dart';
 import 'package:promilo/resources/strings/login_string.dart';
@@ -7,6 +10,7 @@ import 'package:promilo/resources/widgets/media_widget.dart';
 import 'package:promilo/resources/widgets/orwidget.dart';
 import 'package:promilo/resources/widgets/textfield_widget.dart';
 import 'package:promilo/utils/validations.dart';
+import 'package:promilo/view/home.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -104,17 +108,33 @@ class LoginPageState extends State<LoginPage> {
                 ValueListenableBuilder<bool>(
                   valueListenable: isButtonEnabled,
                   builder: (context, value, child) {
-                    return ElevatedButton(
-                      onPressed: value ? () {} : null,
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: AppColors.labelcolor,
-                        fixedSize:
-                            Size(screensize.width, screensize.height * 0.01),
-                      ),
-                      child: Text(
-                        LoginString.signup,
-                        style: Apptext.buttonlabel,
-                      ),
+                    return BlocConsumer<LoginBloc, LoginState>(
+                      
+                      listener: (context, state) {
+                        if(state is UserLoginFailureState){
+                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(state.message)));
+                        }else if(state is UserLoginSuccessState){
+                          Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const HomePage(),));
+                        }
+                      
+                      },
+                      builder: (context, state) {
+
+                        return ElevatedButton(
+                          onPressed: value ? () {
+                            context.read<LoginBloc>().add(LoginUserEvent(email: usernameController.text, password: passwordController.text));
+                          } : null,
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: AppColors.labelcolor,
+                            fixedSize: Size(
+                                screensize.width, screensize.height * 0.01),
+                          ),
+                          child:state is UserLoginLoadingState?const Center(child: CircularProgressIndicator(),) :Text(
+                            LoginString.signup,
+                            style: Apptext.buttonlabel,
+                          ),
+                        );
+                      },
                     );
                   },
                 ),

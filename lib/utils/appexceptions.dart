@@ -8,14 +8,14 @@ class InternetException extends AppException {
   InternetException() : super('No Internet connection');
 }
 
-class RequestTimeOUtException extends AppException {
-  RequestTimeOUtException() : super('Request time out');
+class CustomException extends AppException {
+  CustomException() : super(' Somthing went Wrong ');
 }
 
 class BadRequestException extends AppException {
-  BadRequestException() : super('Something went wrong');
+  BadRequestException() : super('BadRequest please try again !');
 }
 
 class UnauthorizedException extends AppException {
-  UnauthorizedException() : super(' Access Denied');
+  UnauthorizedException({String? message}) : super(message ?? ' Access Denied');
 }
