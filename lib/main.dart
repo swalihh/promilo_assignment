@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:promilo/view/home.dart';
 import 'package:promilo/view/login_page.dart';
 
 void main() {
@@ -9,7 +10,7 @@ class Myapp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return  MaterialApp(
       debugShowCheckedModeBanner: false,
       home: LoginPage(),
     );

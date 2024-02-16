@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:promilo/resources/constants/colors.dart';
 import 'package:promilo/resources/constants/style.dart';
+import 'package:promilo/resources/strings/login_string.dart';
 
 class SignUpTextField extends StatelessWidget {
   final TextEditingController? controller;
@@ -70,7 +71,7 @@ class SignUpTextField extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-             
+               
               Text(
                 labeltwo??'',
                 style: Apptext.secondlabel,

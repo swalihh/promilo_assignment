@@ -11,5 +11,14 @@ class LoginString {
   static String buisness = 'Buisness User?';
   static String noAccount = 'Dont have any account';
   static String login = 'Login Here';
-  static String signup = 'Sign Up';
+  static String signup = 'Submit';
+    static String signupu = 'Sign Up';
+    static String conditiontext1 = 'By Continuing,You agree to';
+    static String conditiontext2 = 'Terms of Use & Privacy Policy';
+    static String conditiontext0 = 'Promilos ';
+
+
+
+
+
 }

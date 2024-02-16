@@ -24,7 +24,18 @@ class Apptext {
       
   static TextStyle get secondlabel => const TextStyle(
       fontSize: 16,
-      fontWeight: FontWeight.w800,
+      fontWeight: FontWeight.w700,
       color: Color.fromARGB(255, 50, 139, 203),
+      overflow: TextOverflow.ellipsis);
+static TextStyle get terms => const TextStyle(
+      fontSize: 14,
+      fontWeight: FontWeight.w700,
+      color: Color.fromARGB(255, 0, 0, 0),
+      overflow: TextOverflow.ellipsis);
+      
+  static TextStyle get buttonlabel => const TextStyle(
+      fontSize: 16,
+      fontWeight: FontWeight.w800,
+      color: Color.fromARGB(255, 255, 255, 255),
       overflow: TextOverflow.ellipsis);
 }
