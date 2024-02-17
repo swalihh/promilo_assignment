@@ -30,6 +30,11 @@ static TextStyle get label2 => const TextStyle(
   static TextStyle get secondlabel => const TextStyle(
       fontSize: 16,
       fontWeight: FontWeight.w700,
+      color: Color.fromARGB(255, 12, 44, 68),
+      overflow: TextOverflow.ellipsis);
+        static TextStyle get secondlabe2 => const TextStyle(
+      fontSize: 16,
+      fontWeight: FontWeight.w700,
       color: Color.fromARGB(255, 50, 139, 203),
       overflow: TextOverflow.ellipsis);
 static TextStyle get terms => const TextStyle(

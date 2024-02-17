@@ -2,7 +2,6 @@
 
 import 'dart:async';
 
-import 'package:either_dart/either.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:promilo/models/user_model.dart';
 import 'package:promilo/repositories/auth_repo.dart';
@@ -17,7 +16,6 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
   }
 
   FutureOr<void> userLogin(LoginUserEvent event, Emitter<LoginState> emit)async {
-    print('inblock');
     emit(UserLoginLoadingState());
    final username=event.email;
 

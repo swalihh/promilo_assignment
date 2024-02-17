@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:promilo/resources/constants/style.dart';
-import 'package:promilo/resources/strings/homestring.dart';
 
-class PopularContainerWidget extends StatelessWidget {
+class PopularViewContainerWidget extends StatelessWidget {
     final String imageUrl;
-  const PopularContainerWidget({super.key, required this.imageUrl});
+  const PopularViewContainerWidget({super.key, required this.imageUrl});
 
   @override
   Widget build(BuildContext context) {
     final Size screenSize = MediaQuery.of(context).size;
 
     return Container(
-      height: 100,
+      height: 150,
       width: screenSize.width,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
@@ -49,17 +47,7 @@ class PopularContainerWidget extends StatelessWidget {
               ),
             ),
           ),
-          Positioned(
-            bottom: 0,
-            left: 0,
-            child: Container(
-              padding: const EdgeInsets.all(8),
-              child: Text(
-                HomeString.popular,
-                style: Apptext.buttonlabel,
-              ),
-            ),
-          ),
+         
         ],
       ),
     );

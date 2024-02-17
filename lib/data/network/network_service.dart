@@ -17,7 +17,6 @@ class NetworkService{
    late http.Response response;
     try {
        response = await http.post(uri, body: data, headers: headers);
-      print(response.body);
       final loginData = getResponse(response);
       return Right(loginData);
     } on SocketException {

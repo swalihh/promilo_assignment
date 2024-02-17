@@ -5,6 +5,7 @@ import 'package:promilo/resources/strings/homestring.dart';
 import 'package:promilo/resources/widgets/popular.dart';
 import 'package:promilo/resources/widgets/top_widget.dart';
 import 'package:promilo/resources/widgets/trending_page_widget.dart';
+import 'package:promilo/view/meetup_view_page.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class HomePage extends StatefulWidget {
@@ -98,16 +99,18 @@ class _HomePageState extends State<HomePage> {
             HomeString.trending,
             style: Apptext.label2,
           ),
-       SizedBox(
-        height: 170,
-      
-         child: ListView.separated(
-               scrollDirection: Axis.horizontal,
-          itemBuilder: (context, index) {
-           return  const  TrendingScreen();
-         }, separatorBuilder: (context, index) => const SizedBox(width: 5,), itemCount: 5),
-       ),
-       
+          SizedBox(
+            height: 170,
+            child: ListView.separated(
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) {
+                  return const TrendingScreen();
+                },
+                separatorBuilder: (context, index) => const SizedBox(
+                      width: 5,
+                    ),
+                itemCount: 5),
+          ),
           SizedBox(
             height: screenSize.height * 0.02,
           ),
@@ -115,28 +118,30 @@ class _HomePageState extends State<HomePage> {
             HomeString.top,
             style: Apptext.label2,
           ),
-               SizedBox(
+          SizedBox(
             height: screenSize.height * 0.01,
           ),
-
- 
-          SizedBox(height: 160,
+          SizedBox(
+            height: 160,
             child: ListView.separated(
-            scrollDirection: Axis.horizontal,
-              itemBuilder: (context, index) {
-                 return    ImageStackWidget(
-              height: screenSize.height * 0.20,
-              width: screenSize.width * 0.5,
-              index: index+1,
-            );
-            }, separatorBuilder: (context, index) => const SizedBox(width: 10,), itemCount: 5),
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) {
+                  return InkWell(
+                    onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => MeetupViewPage(),
+                    )),
+                    child: ImageStackWidget(
+                      height: screenSize.height * 0.20,
+                      width: screenSize.width * 0.5,
+                      index: index + 1,
+                    ),
+                  );
+                },
+                separatorBuilder: (context, index) => const SizedBox(
+                      width: 10,
+                    ),
+                itemCount: 5),
           )
-
-  
-
-
-         
-        
         ]),
       ),
     );

@@ -1,0 +1,37 @@
+[33mcommit c3d380580a18b61883801e2eb80eb0672e1bd28d[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Muhammed Swalih <muhammedswalih476@gmail.com>
+Date:   Sat Feb 17 11:06:12 2024 +0530
+
+    Bottom bar completed
+
+[33mcommit 2db244b7d728e153006f2823ea65de62e6877665[m
+Author: Muhammed Swalih <muhammedswalih476@gmail.com>
+Date:   Sat Feb 17 10:54:58 2024 +0530
+
+    Completed Homescreen
+    
+    complted all ui part in homescreen
+
+[33mcommit 29845ceaeba619dfcfb269e336c18361674736e6[m
+Author: Muhammed Swalih <muhammedswalih476@gmail.com>
+Date:   Fri Feb 16 21:25:13 2024 +0530
+
+    Completed Api functionalities
+
+[33mcommit 706fcab8c8cd9d9f34f09439f5257f4faf803300[m
+Author: Muhammed Swalih <muhammedswalih476@gmail.com>
+Date:   Fri Feb 16 18:46:32 2024 +0530
+
+    login-page-complete
+
+[33mcommit a0e220d105a6de383de2d1a45f947bd70f584720[m
+Author: Muhammed Swalih <muhammedswalih476@gmail.com>
+Date:   Thu Feb 15 23:51:07 2024 +0530
+
+    Login Ui & validations are  completed
+
+[33mcommit 354be407154f561822a9f4d81e4b994025c13364[m
+Author: Muhammed Swalih <muhammedswalih476@gmail.com>
+Date:   Thu Feb 15 22:33:47 2024 +0530
+
+    initialized first commit
