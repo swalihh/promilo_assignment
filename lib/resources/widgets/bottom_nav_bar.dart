@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:promilo/resources/constants/colors.dart';
 import 'package:promilo/view/home.dart';
 
-
 class Start extends StatefulWidget {
   const Start({super.key});
 
@@ -12,7 +11,7 @@ class Start extends StatefulWidget {
 
 class _StartState extends State<Start> {
   int currentPage = 0;
-  List<Widget> pages = [ HomePage()];
+  List<Widget> pages = [HomePage()];
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -46,19 +45,19 @@ class NavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Colors.transparent,
       child: Container(
-        margin: const EdgeInsets.only(left: 10, right: 10, bottom: 16),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          color: AppColors.bagroundWhite
-        ),
+        decoration: const BoxDecoration(color: AppColors.appbarColor),
         height: 60,
         child: Row(
           children: [
             navItem(Icons.home, pageIndex == 0, ontap: () => ontap(0)),
-            navItem(Icons.list_alt, pageIndex == 1, ontap: () => ontap(1)),
-            navItem(Icons.checklist, pageIndex == 2, ontap: () => ontap(2)),
+            navItem(Icons.category_outlined, pageIndex == 1,
+                ontap: () => ontap(1)),
+            navItem(Icons.handshake, pageIndex == 2, ontap: () => ontap(2)),
+            navItem(Icons.file_open_rounded, pageIndex == 3,
+                ontap: () => ontap(3)),
+            navItem(Icons.person_2_outlined, pageIndex == 4,
+                ontap: () => ontap(4)),
           ],
         ),
       ),
@@ -71,7 +70,7 @@ class NavBar extends StatelessWidget {
       onTap: ontap,
       child: Icon(icon,
           color: selected
-              ?const Color.fromARGB(255, 0, 234, 255)
+              ? const Color.fromARGB(255, 0, 234, 255)
               : AppColors.buttoncolor),
     ));
   }
