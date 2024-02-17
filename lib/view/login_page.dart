@@ -114,7 +114,7 @@ class LoginPageState extends State<LoginPage> {
                         if(state is UserLoginFailureState){
                           ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(state.message)));
                         }else if(state is UserLoginSuccessState){
-                          Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const HomePage(),));
+                          Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) =>  HomePage(),));
                         }
                       
                       },
